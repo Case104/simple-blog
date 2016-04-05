@@ -1,0 +1,9 @@
+<div class='new-post-link'>
+	<a href="/posts/new">Make a post</a>
+</div>
+
+<% @posts.each do |post| %>
+	<div id='post-<%=post.id%>'>
+		<a href="/posts/<%=post.id%>"><h3><%= post.title %></h3></a>
+	</div>
+<% end %>
