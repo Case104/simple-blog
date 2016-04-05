@@ -1,10 +1,15 @@
 <%= @post.title %>
+<% if logged_in? %>
+	<% if current_user.id == @post.user_id %>
+		<form action="/posts/<%= @post.id %>/edit" method="GET">
+			<input type="submit" value="Edit this post">
+		</form>
+		<form action="/posts/<%= @post.id %>" method="POST">
+			<input type="hidden" name="_method" value="DELETE">
+			<input type="submit" value="Delete this post">
+		</form>
+	<% end %>
+	<%= erb :'/comments/new' %>
 
-<form action="/posts/<%= @post.id %>/edit" method="GET">
-	<input type="submit" value="Edit this post">
-</form>
+<% end %>
 
-<form action="/posts/<%= @post.id %>" method="POST">
-	<input type="hidden" name="_method" value="DELETE">
-	<input type="submit" value="Delete this post">
-</form>
