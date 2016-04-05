@@ -24,10 +24,11 @@ CRUD FLOW
 	e. get 'users/logout'
 		clears session
 	f. (optional) 'get users/show' - Profile page
-
-
-
-
+7. Pattern
+	a. Make a route in the controller
+	b. Make a view for it
+	c. Make a way to get to the route (link, form)
+	b. Add logic if necessary
 
 
 
@@ -39,5 +40,30 @@ Qs:
 
 CUSTOM VALIDATION NOTES
 
+In method
+-------------------------------------------------
+validate :starts_with_lion
+
+private
+
+def starts_with_lion
+	unless message.starts_with?('lion')
+	errors.add(:message, 'Did not start with lion')
+end
+--------------------------------------------------
 FORM TEMPLATE
+
+<form action='/users' method='POST'>
+  <label for='user[email]'>Email</label>
+  <div>
+  	<input type="text" name="user[email]" placeholder="JohnDoe@email.com">
+  </div>
+  <label for'user[password]'>Password</label>
+  <div>
+  	<input type="password" name="user[password]">
+  </div>
+  <div>
+  	<input type='submit' value='Register'>
+  </div>
+</form>
 

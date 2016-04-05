@@ -10,14 +10,14 @@ post '/users' do
 		redirect '/'
 	else
 		@errors = @user.errors.full_messages
-		redirect '/users/new'
+		erb :'/users/new'
 	end
 end
 
 get '/users/login' do
 	if logged_in?
 		@errors = ['You are already logged in.']
-		redirect '/'
+		erb :'/posts/index'
 	else
 		erb :'/users/login'
 	end
@@ -30,11 +30,15 @@ post '/users/login' do
 		redirect '/'
 	else
 		@errors = ['Incorrect Email or Password.']
-		redirect 'users/login'
+		erb :'/users/login'
 	end
 end
 
 get '/users/logout' do
 	session.clear
 	redirect '/'
+end
+
+get '/users/:id' do
+	erb :'users/show'
 end

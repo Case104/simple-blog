@@ -11,6 +11,19 @@
   <title>Simple Blog</title>
 </head>
 <body>
+	<% if logged_in? %>
+		<nav class'nav-logged-in'>
+			<li><a href='/posts'>Posts</a></li>
+			<li><a href="/users/<%= current_user.id %>"><%=current_user.username%></a>
+			<li><a href="/users/logout">Logout</a></li>
+		</nav>
+	<% else %>
+		<nav class='nav-logged-out'>
+			<li><a href='/posts'>Posts</a></li>
+			<li><a href="/users/new">Register</a></li>
+			<li><a href="/users/login">Login</a></li>
+		</nav>
+	<% end %>
   <%= erb :_errors %>
   <%= yield %>
 </body>
