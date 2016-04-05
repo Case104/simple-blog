@@ -4,6 +4,8 @@
 3. Set up migrations
 	a. be rake generate:migrations NAME=create_foo
 	b. create_table :plural_foo do |t|
+		z. uniqueness, t.references :reference, timestamps
+4. 
 
 
 
