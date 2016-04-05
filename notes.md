@@ -36,7 +36,7 @@ Qs:
 	1. Does bcrypt need to be in the enviornment?
 	2. Validation for email in model and migration.
 	3(!). Redirect vs erb
-
+	4. Instance varia
 
 CUSTOM VALIDATION NOTES
 

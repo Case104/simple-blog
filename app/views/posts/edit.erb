@@ -1,0 +1,14 @@
+<form action='/posts/<%=params[:id]%>' method='POST'>
+  <input type="hidden" name="_method" value="PUT">
+  <label for='post[title]'>Title</label>
+  <div>
+  	<input type="text" name="post[title]" placeholder="Awesome(er) post title">
+  </div>
+  <label for'post[body]'>Post</label>
+  <div>
+  <textarea rows="5" cols="40" name="post[body]" type="text" placeholder="Your edited post!"></textarea>
+  </div>
+  <div>
+  	<input type='submit' value='Edit Post'>
+  </div>
+</form>

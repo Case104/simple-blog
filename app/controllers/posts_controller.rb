@@ -32,5 +32,27 @@ get '/posts/:id' do
 	erb :'/posts/show'
 end
 
-delete 'posts/:id' do
+delete '/posts/:id' do
+	post = Post.find_by(id: params[:id])
+	post.destroy
+	redirect '/posts'
 end
+
+get '/posts/:id/edit' do
+	erb :'/posts/edit'
+end
+
+put '/posts/:id' do
+	@post = Post.find_by(id: params[:id])
+	@post.assign_attributes(params[:post])
+	if @post.save
+		redirect "/posts/#{params[:id]}"
+	else
+		@errors = @post.errors.full_messages
+		erb :'/posts/edit'
+	end
+end
+
+
+
+
