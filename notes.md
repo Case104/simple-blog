@@ -11,6 +11,7 @@ CRUD FLOW
 	a. be rake generate:model NAME=Foo
 	b. has_secure_password on user
 	c. uniqueness, presence
+5. 
 
 
 
@@ -21,6 +22,7 @@ CRUD FLOW
 
 Qs:
 	1. Does bcrypt need to be in the enviornment?
+	2. Validation for email in model and migration.
 
 
 CUSTOM VALIDATION NOTES
